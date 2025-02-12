@@ -11,19 +11,8 @@ songsNames = [
 let song: string;
 song = askUser("Introduce la posición de la canción que deseas escuchar: ");
 
-switch (song) {
-  case "1":
-    console.log(songsNames[0]);
-    break;
-  case "2":
-    console.log(songsNames[1]);
-    break;
-  case "3":
-    console.log(songsNames[2]);
-    break;
-  case "4":
-    console.log(songsNames[3]);
-    break;
-  default:
-    console.log("No existe ninguna canción en esa posición.");
-}
+const position = song !== null ? parseInt(song, 10) : NaN;
+
+position >= 1 && position <= songsNames.length
+  ? console.log(`La canción en esa posición es ${songsNames[+song - 1]}.`)
+  : console.log("Error: no existe ninguna canción en esa posición.");
