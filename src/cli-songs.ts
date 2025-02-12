@@ -15,5 +15,5 @@ let userInput = askUser(
 const message =
   Number(userInput) >= 1 && Number(userInput) <= songsNames.length
     ? `La canción en esa posición es ${songsNames[Number(userInput) - 1]}.`
-    : "Error: no existe ninguna canción en esa posición.";
+    : "Error.";
 console.log(message);
