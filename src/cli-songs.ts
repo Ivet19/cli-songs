@@ -1,19 +1,18 @@
 import askUser from "./askUser.js";
 
-let songsNames: string[];
-songsNames = [
+let songsNames = [
   "Chihiro",
   "Happier than ever",
   "Birds of a feather",
   "Wildflower",
 ];
 
-let userInput = askUser(
+let songPosition = askUser(
   "Introduce la posición de la canción que deseas escuchar: "
 );
 
 const message =
-  Number(userInput) >= 1 && Number(userInput) <= songsNames.length
-    ? `La canción en esa posición es ${songsNames[Number(userInput) - 1]}.`
-    : "Error.";
+  Number(songPosition) >= 1 && Number(songPosition) <= songsNames.length
+    ? `La canción en esa posición es ${songsNames[Number(songPosition) - 1]}.`
+    : `Error: el valor introducido no es válido. El número de canciones disponibles es ${songsNames.length}`;
 console.log(message);
